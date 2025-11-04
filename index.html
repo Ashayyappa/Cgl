@@ -1,78 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CGL Conference Room</title>
-  <style>
-    body,
-    html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
-      overflow: hidden;
-    }
-
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 15px;
-      background-color: #ffffff;
-      border-bottom: 3px solid #004a99;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      box-sizing: border-box;
-      z-index: 10;
-    }
-
-    .logo img {
-      max-height: 40px;
-      display: block;
-    }
-
-    .menu-icon {
-      font-size: 28px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .pdf-container {
-      padding-top: 63px;
-      height: 100vh;
-      box-sizing: border-box;
-    }
-
-    .pdf-viewer {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGL Conference Room</title>
+    <style>
+        /* --- THIS IS THE CORRECTED CSS --- */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            /* The old "overflow: hidden;" line is GONE. 
+              This now allows the whole page to scroll.
+            */
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            background-color: #ffffff;
+            border-bottom: 3px solid #004a99; 
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            box-sizing: border-box; 
+            z-index: 10;
+        }
+        .logo img {
+            max-height: 40px; 
+            display: block;
+        }
+        .menu-icon {
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        /* This container holds the image */
+        .content-container {
+            padding-top: 63px; /* Space for the fixed header */
+            padding-bottom: 20px; /* Some space at the bottom */
+            box-sizing: border-box;
+        }
+        /* This styles the image itself */
+        .instruction-image {
+            width: 100%; /* Make the image fit the screen width */
+            height: auto; /* Let the height adjust automatically */
+            display: block; /* Removes any extra space below the image */
+        }
+    </style>
 </head>
-
 <body>
 
-  <header class="header">
-    <div class="logo">
-      <img src="cgl-logo.png" alt="CGL Simplifying Logistics">
-    </div>
-    <div class="menu-icon">&#9776;</div>
-  </header>
+    <header class="header">
+        <div class="logo">
+            <img src="cgl-logo.png" alt="CGL Simplifying Logistics">
+        </div>
+        <div class="menu-icon">&#9776;</div> </header>
 
-  <main class="pdf-container">
-    <iframe src="instructions-1.png" class="pdf-viewer" title="Conference Room Instructions PDF">
-      <p>Your browser does not support embedded PDFs.
-        <a href="instructions-1.png">Click here to download the PNG.</a>
-      </p>
-    </iframe>
-  </main>
+    <main class="content-container">
+        <img 
+            src="instructions.png" 
+            class="instruction-image" 
+            alt="Conference Room Instructions"
+        >
+    </main>
 
 </body>
-
 </html>
